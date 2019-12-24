@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		String str;
+		int vcount = 0;
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter text : ");
+		str = sc.nextLine();
+		sc.close();
+		
+		str = str.toLowerCase();
+		
+		for(int i=0; i < str.length() ; i++){
+		    
+		    if(str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u'){
+		        vcount = vcount + 1;    
+		    }
+		}
+		
+		System.out.println("Number of Vowels : "+vcount);
+		String rev = reverseString(str);
+		System.out.println("Reversed text : "+rev);
+	}
+	
+	public static String reverseString(String str){
+	    
+	    if(str.isEmpty()){
+	        return str;
+	    }
+	    else{
+	        return reverseString(str.substring(1))+str.charAt(0);
+	    }
+	}
+	
+	
+	
+}
